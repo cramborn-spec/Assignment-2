@@ -1,6 +1,5 @@
 """
-main.py - A simple chatbot that uses the Groq API to answer user questions.
-The conversation continues in a loop until the user types "quit".
+main.py 
 
 Setup:
     pip install groq
