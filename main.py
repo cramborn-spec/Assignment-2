@@ -1,5 +1,6 @@
 """
-main.py 
+main.py - A simple chatbot that uses the Groq API to answer user questions.
+The conversation continues in a loop until the user types "quit".
 
 Setup:
     pip install groq
@@ -36,8 +37,7 @@ def main():
         # Skip empty input
         if not user_input:
             continue
-
-        # Append user message to conversation history
+# Append user message to conversation history
         conversation_history.append({
             "role": "user",
             "content": user_input,
@@ -46,7 +46,7 @@ def main():
         # Call the Groq API
         chat_completion = client.chat.completions.create(
             messages=conversation_history,
-            model="llama3-8b-8192",  # Fast, capable Llama 3 model on Groq
+            model="llama-3.3-70b-versatile",  # Current recommended model on Groq
         )
 
         # Extract the assistant's reply
@@ -63,3 +63,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
